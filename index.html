@@ -225,12 +225,12 @@
         <article class="project reveal clickable" data-kind="intern" data-open="p3" style="--accent:#22d3ee" tabindex="0" role="button" aria-label="查看项目细节：运营工作站模块框架">
           <div class="num">03</div>
           <div>
-            <h3>运营工作站 · 配置驱动模块框架 + 三个业务模块</h3>
+            <h3>运营工作站 · 配置驱动模块框架（多模块 + 组件体系）</h3>
             <div class="cat">Vue 3 / TypeScript / Schema 驱动渲染 / Mock 联调</div>
-            <div class="team">实习项目 · 参与整体搭建（用户数据台 / 用户服务台 / 积分商城）</div>
-            <p class="desc">把"每个新页面都重写一遍"变成"用 schema 描述页面"：ModuleView 通用渲染器 + BlockRenderer / ModuleTable / SimpleChart / DetailDialog，配合统一下钻接口与模块关系定义，交付三个业务模块。</p>
+            <div class="team">实习项目 · 参与整体搭建（用户数据台 / 用户服务台 / 积分商城 / 会员配置 / 医务工作台 等）</div>
+            <p class="desc">把"每个新页面都重写一遍"变成"用 schema 描述页面"：ModuleView 通用渲染器 + 12 个通用组件（含自绘图表 SimpleChart、对话面板 ChatPanel、冲突仲裁 ConflictPanel、成本 CostPanel、圈选条件 SegmentBuilder），统一指标卡 / 表格行 / 操作按钮的下钻接口；进一步把 93 条指标的口径写成唯一权威来源并加自动化校验，补齐 515 行响应式约束。</p>
             <div class="metrics">
-              <span class="metric">3 个业务模块</span><span class="metric">5 个通用组件</span><span class="metric">统一下钻接口</span><span class="metric">Mock ↔ 真实切换</span>
+              <span class="metric">18 条路由 / 14 个视图</span><span class="metric">12 个通用组件</span><span class="metric">93 条指标口径</span><span class="metric">响应式 515 行</span><span class="metric">Mock ↔ 真实切换</span>
             </div>
             <span class="open-hint">查看细节 →</span>
           </div>
@@ -569,6 +569,7 @@
       <li><b>能力拆分：</b>BlockRenderer（区块）、ModuleTable（表格 + 行内操作 + 行点击下钻）、SimpleChart（自绘图表，避免为单页引入重型图表库）、DetailDialog（通用详情弹窗）。</li>
       <li><b>统一下钻：</b>指标卡 / 表格行 / 操作按钮统一走 detailKey + params，接口为 /api/operation/{module}/overview 与 /details/{detailKey}，视图层不感知具体接口。</li>
       <li><b>Mock 优先：</b>每模块一个 USE_MOCK 开关与同构 mock 数据（overview / details 分离），后端未就绪即可走查全部交互，联调时一键切换。</li>
+      <li><b>最近的扩写（9.11–9.14）：</b>模块从 3 个扩到 14 个视图（新增会员配置、医务工作台、策略配置台、终端管理台、仓库管理、时光计划）；组件体系扩到 12 个（新增 ChatPanel 对话面板、ConflictPanel 冲突仲裁、CostPanel 成本、SegmentBuilder 圈选条件、StrategyDialog、TagEditorDialog）；把 <b>93 条指标的口径</b>写成唯一权威来源并加自动化校验（禁止无口径指标）；新增 <code>responsive.scss</code> 515 行统一响应式约束；产出《后端交接文档》9 章与《模块功能与接口》覆盖表。</li>
       <li><b>类型与关系：</b>TS strict 下定义 ModuleOverview / ModuleTab / ModuleStat / DetailView；模块间关系单独建模管理。</li>
     </ul>
     <h4>结果</h4>
